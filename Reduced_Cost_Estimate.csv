@@ -1,0 +1,31 @@
+Estimate summary,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,
+0,6245.81,74949.72,USD,,,,,
+,,* Includes upfront cost,,,,,,
+,,,,,,,,
+,,,,,,,,
+Detailed Estimate,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+Reduced_Cost_Estimate,US East (N. Virginia),,Network Address Translation (NAT) Gateway,0,37.35,448.2,USD,Number of NAT Gateways (1)
+Reduced_Cost_Estimate,US East (N. Virginia),,S3 Standard,0,235.52,2826.24,USD,S3 Standard storage (10 TB per month)
+Reduced_Cost_Estimate,US East (N. Virginia),,S3 Glacier Deep Archive,0,0.02,0.24,USD,"S3 Glacier Deep Archive Average Object Size (16 MB), S3 Glacier Deep Archive storage (20 GB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),,Data Transfer,0,0,0,USD,"DT Inbound: Internet (10 TB per month), DT Outbound: Amazon CloudFront (10 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),,Application Load Balancer,0,73.73,884.76,USD,Number of Application Load Balancers (2)
+Reduced_Cost_Estimate,US East (N. Virginia),,Amazon CloudFront,0,1076.2,12914.4,USD,"Data transfer out to internet (10 TB per month), Number of requests (HTTPS) (1000000 per month), Data transfer out to origin (10 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),Master database,Amazon RDS for PostgreSQL,0,739.09,8869.08,USD,"Storage volume (General Purpose SSD (gp2)), Storage amount (100 GB), Nodes (1), Instance Type (db.r6g.xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Multi-AZ), Pricing Model (OnDemand), Additional backup storage (100 GB), Cost for one month of retention (per vCPU per month) (1.5000000000), Cost for total retention (per vCPU per month) (1.63), Total Size of Backup Processed for Export (GB) (0 per month), Cost for each additional month of retention (per vCPU per month) (0.0631000000)"
+Reduced_Cost_Estimate,US East (N. Virginia),Application Servers in Private Subnets,Amazon EC2 ,0,1974.796,23697.55,USD,"Tenancy (Dedicated Instances), Operating system (Linux), DT Inbound: Internet (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 4), Enable monitoring (disabled), Advance EC2 instance (t3.xlarge), Pricing strategy (), Snapshot Frequency (No snapshot storage)"
+Reduced_Cost_Estimate,US East (N. Virginia),Web Servers in Public Subnets,Amazon EC2 ,0,1717.544,20610.53,USD,"Tenancy (Dedicated Instances), Operating system (Linux), DT Inbound: Internet (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 4), Enable monitoring (disabled), Advance EC2 instance (t3.large), Pricing strategy (), Snapshot Frequency (No snapshot storage)"
+Reduced_Cost_Estimate,US East (N. Virginia),Read replica database,Amazon RDS for PostgreSQL,0,386.16,4633.92,USD,"Storage volume (General Purpose SSD (gp2)), Storage amount (100 GB), Nodes (1), Instance Type (db.r6g.large), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Multi-AZ), Pricing Model (OnDemand), Additional backup storage (100 GB), Cost for one month of retention (per vCPU per month) (1.5000000000), Cost for total retention (per vCPU per month) (1.63), Cost for each additional month of retention (per vCPU per month) (0.0631000000)"
+Reduced_Cost_Estimate,US East (N. Virginia),,Amazon Route 53,0,5.4,64.8,USD,Hosted Zones (10)
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Acknowledgement,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,
+,,,,,,,,
+,,,,,,,,
+The changes of Reduced_Cost_Estimate:,,,,,,,,
+,,,,,,,,
+,"1. S3 Standard: Reduce 30GB to 10GB, convert that 20GB into S3 Glacier Deep Archive",,,,,,,
+,"2. PostgreSQL: Master database (db.r6g.2xlarge to db.r6g.xlarge), Read replica database (db.r6g.xlarge to db.r6g.large)",,,,,,,
+,"3. EC2: Application Servers (t3.2xlarge to t3.xlarge), Web Servers (t3.xlarge to t3.large)",,,,,,,

@@ -1,0 +1,34 @@
+Estimate summary,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,
+0,19138.115,229657.38,USD,,,,,
+,,* Includes upfront cost,,,,,,
+,,,,,,,,
+,,,,,,,,
+Detailed Estimate,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+Increased_Cost_Estimate,US East (N. Virginia),,Network Address Translation (NAT) Gateway,0,37.35,448.2,USD,Number of NAT Gateways (1)
+Increased_Cost_Estimate,US East (N. Virginia),,S3 Standard,0,706.56,8478.72,USD,S3 Standard storage (30 TB per month)
+Increased_Cost_Estimate,US East (N. Virginia),,Data Transfer,0,0,0,USD,"DT Inbound: Internet (10 TB per month), DT Outbound: Amazon CloudFront (10 TB per month)"
+Increased_Cost_Estimate,US East (N. Virginia),,Application Load Balancer,0,73.73,884.76,USD,Number of Application Load Balancers (2)
+Increased_Cost_Estimate,US East (N. Virginia),,Amazon CloudFront,0,1076.2,12914.4,USD,"Data transfer out to internet (10 TB per month), Number of requests (HTTPS) (1000000 per month), Data transfer out to origin (10 TB per month)"
+Increased_Cost_Estimate,US East (N. Virginia),Master database,Amazon RDS for PostgreSQL,0,5686.68,68240.16,USD,"Storage volume (General Purpose SSD (gp2)), Storage amount (100 GB), Nodes (1), Instance Type (db.r6g.8xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Multi-AZ), Pricing Model (OnDemand), Additional backup storage (100 GB), Cost for one month of retention (per vCPU per month) (1.5000000000), Cost for total retention (per vCPU per month) (1.63), Total Size of Backup Processed for Export (GB) (0 per month), Cost for each additional month of retention (per vCPU per month) (0.0631000000)"
+Increased_Cost_Estimate,US East (N. Virginia),Application Servers in Private Subnets,Amazon EC2 ,0,3519.768,42237.22,USD,"Tenancy (Dedicated Instances), Operating system (Linux), DT Inbound: Internet (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 8), Enable monitoring (disabled), Advance EC2 instance (t3.2xlarge), Pricing strategy (), Snapshot Frequency (No snapshot storage)"
+Increased_Cost_Estimate,US East (N. Virginia),Web Servers in Public Subnets,Amazon EC2 ,0,2489.592,29875.1,USD,"Tenancy (Dedicated Instances), Operating system (Linux), DT Inbound: Internet (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month), Workload (Consistent, Number of instances: 8), Enable monitoring (disabled), Advance EC2 instance (t3.xlarge), Pricing strategy (), Snapshot Frequency (No snapshot storage)"
+Increased_Cost_Estimate,US East (N. Virginia),Read replica database,Amazon RDS for PostgreSQL,0,2859.59,34315.08,USD,"Storage volume (General Purpose SSD (gp2)), Storage amount (100 GB), Nodes (1), Instance Type (db.r6g.4xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Multi-AZ), Pricing Model (OnDemand), Additional backup storage (100 GB), Cost for one month of retention (per vCPU per month) (1.5000000000), Cost for total retention (per vCPU per month) (1.63), Cost for each additional month of retention (per vCPU per month) (0.0631000000)"
+Increased_Cost_Estimate,US East (N. Virginia),,Amazon Route 53,0,175,2100,USD,Hosted Zones (10)
+Increased_Cost_Estimate,US East (N. Virginia),,Amazon Elastic File System (EFS),0,2457.6,29491.2,USD,"Desired Storage Capacity (30 TB per month), Provisioned Throughput ( MB/s per month)"
+Increased_Cost_Estimate,US East (N. Virginia),,Amazon CloudWatch,0,56.045,672.54,USD,"Number of Metrics (includes detailed and custom metrics) (100), Standard Logs: Data Ingested (10 GB), Number of Dashboards (10)"
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Acknowledgement,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,
+,,,,,,,,
+,,,,,,,,
+"Based on the Initial_Cost_Estimate.csv, here are several ways I suggest to improve performance:",,,,,,,,
+,,,,,,,,
+,1. Increase the number of web/app servers from 8 to 16 instances.,,,,,,,
+,"2. Upgrade the Master database in PostgreSQL from db.r6g.2xlarge to db.r6g.8xlarge, and the Read replica database from db.r6g.xlarge to db.r6g.4xlarge.",,,,,,,
+,3. Utilize 30GB of Amazon Elastic File System (EFS) to provide a scalable and highly available file system that can be accessed from multiple EC2 instances.,,,,,,,
+,4. Update Route 53 with Geo DNS queries and Latency based routing queries to optimize routing to the closest and most responsive resources.,,,,,,,
+,"5. Implement Amazon CloudWatch Logs to collect, monitor, and analyze log data from infrastructure and applications.",,,,,,,
